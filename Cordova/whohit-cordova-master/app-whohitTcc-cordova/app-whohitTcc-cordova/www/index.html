@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Personalize a política de segurança de conteúdo na marca meta abaixo, conforme necessário. Adicione 'unsafe-inline' ao default-src para habilitar o JavaScript embutido.
+ Para obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/javascript" href="js/conexao.js">
+        <title>appwhohitTcccordova</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./js/jquerymobile/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script src="./js/jquery-2.2.4.min.js"></script>
+    <script src="./js/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- essa função da um comando para o loader seguir para a proxima pagina (#page2)-->
+    <script>
+        function alertar() {
+            setTimeout(function(){window.location='#page2';}, 3000);
+        }
+    </script>
+
+
+<!-- função add numeros ou caracteres na caixa de texto do teclado-->
+    <script>
+        function addNumber(element){
+return(MascaraMoeda(document.getElementById('valor').value =document.getElementById('valor').value+element.value,',','.',event));
+
+}
+function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){
+var sep = 0;
+var key = '';
+var i = j = 0;
+var len = len2 = 0;
+var strCheck = '0123456789';
+var aux = aux2 = '';
+var whichCode = (window.Event) ? e.which : e.keyCode;
+if ((whichCode == 13) || (whichCode == 0) || (whichCode == 8)) return true;
+key = String.fromCharCode(whichCode); 
+if (strCheck.indexOf(key) == -1) return false;
+len = objTextBox.value.length;
+for(i = 0; i < len; i++)
+if ((objTextBox.value.charAt(i) != '0') && (objTextBox.value.charAt(i) != SeparadorDecimal)) break;
+aux = '';
+for(; i < len; i++)
+if (strCheck.indexOf(objTextBox.value.charAt(i))!=-1) aux += objTextBox.value.charAt(i);
+aux += key;
+len = aux.length;
+if (len == 0) objTextBox.value = '';
+if (len == 1) objTextBox.value = '0'+ SeparadorDecimal + '0' + aux;
+if (len == 2) objTextBox.value = '0'+ SeparadorDecimal + aux;
+if (len > 2) {
+aux2 = '';
+for (j = 0, i = len - 3; i >= 0; i--) {
+if (j == 3) {
+aux2 += SeparadorMilesimo;
+j = 0;
+}
+aux2 += aux.charAt(i);
+j++;
+}
+objTextBox.value = '';
+len2 = aux2.length;
+for (i = len2 - 1; i >= 0; i--)
+objTextBox.value += aux2.charAt(i);
+objTextBox.value += SeparadorDecimal + aux.substr(len - 2, len);
+}
+preço=objTextBox.value
+return false;
+}
+
+    </script>
+
+    <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+    </head>
+    <body>
+        <!--<div data-role="page" id="pageLoading">
+        <div data-role="main" class="tamanhoMinimo" style="background-color:white;">
+            <br><br><br><br><br><br><br><br>
+            <div style='position:relative; top:-30px; left:0px;'>
+                <img src="img/logo.png" border=0 style="position: absolute ;padding: 50px;padding-left: 15px;height: 60px">
+                <img src="img/gif.gif" style="padding: 70px;padding-left: 15px">
+        </div>
+            <script type="text/javascript">
+                alertar();
+            </script>
+        </div>
+    </div>-->
+   
+
+    <div data-role="page" id="page2" style="border-radius: 3px">
+        <div data-role="header"  >
+        </div>
+        <div data-role="main" class="tamanhoMinimo">
+        	<img src="img/logo.png" style="position: absolute ;padding: 50px;padding-left: 25px;height: 50px">
+            <br><br><br><br><br><br>
+            </table>
+            <form class="class="w3-container w3-card-4" action="/action_conexao.js">
+            	<br><br>
+              <input type="email" name="login" value="" placeholder="Digite seu email" style="background-color:#D3D3D3;width: 247px;margin-left: 10px">
+        <input type="password" name="Senha" value="" placeholder="Digite sua senha" style="background-color:#D3D3D3;width: 247px;margin-left: 10px"><br>
+                <button style="width:150px;margin-left:55px;color:white;background-color: #000080" href="#page6">Entrar</button><br>
+                 <a style="margin-left: 15px" class="button" href="#page3">Não tem uma conta? crie uma!</a>
+            </form>
+        </div>
+        <div data-role="footer">
+        </div>
+    </div>  
+
+        <div data-role="page" id="page3" data-theme="b">
+        <div data-role="header" style="background-color:#1a75ff;" >
+            <label style="font: 20px Arial;" align="center">Cadastro Usuario</label>
+        </div>  
+            <div data-role="main" class="tamanhoMinimo">
+                <form id="cadastro" action="/action_page.php">
+                    <label style="font: 20px Arial;">Criar conta</label> <br>
+                    <input type="email" name="email" id="email" value="" placeholder="email"><br>
+                    <input type="password" name="senha" id="senha" value="" placeholder="Senha"><br>
+                    <input type="text" name="nome completo" id="nome" value="" placeholder="Nome completo">
+                    <input type="date" name="data de nascimento" id="data" value="" placeholder="Data de nascimento">
+                    <input type="text" name="CPF" id="cpf" value="" placeholder="CPF">
+                    <input type="text" name="endereco" id="endereco" value="" placeholder="Endereço">
+                    <input type="text" name="bairro" id="bairro" value="" placeholder="Bairro">
+                    <input type="text" name="cidade" id="cidade" value="" placeholder="Cidade">
+                    <input type="text" name="estado" id="estado" value="" placeholder="Estado">
+                    <a style="background-color:#1a75ff; ;border-radius: 50px" data-role="button" href="#page5">Próximo</a>
+                    <a style="background-color:#1a75ff; ;border-radius: 50px" data-role="button" href="#page2">Voltar</a>
+                </form>
+            </div>
+                <div data-role="footer" data-theme="b">
+                
+                </div>
+        </div>
+        <div data-role="page" id="page5" data-theme="b">
+        <div data-role="header" style="background-color:#1a75ff;">
+            <label style="font: 20px Arial;" align="center">Cadastro Arduino</label>
+        </div>  
+            <div data-role="main" class="tamanhoMinimo">
+                <p>1000@10.0.02</p>
+                <form>
+
+                <table cellpadding="2" cellspacing="2" border="0">
+                    <tr>
+                        <td colspan="3" align="center"><input type="text" id="valor"onKeyPress="return(MascaraMoeda(this,'.',',',event))" size="45" placeholder="Numero ou Endereço SIP"></td>
+
+                    </tr>
+                    <tr> 
+                        <td><input type="button" value="1" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="2" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="3" style="font-size:25px;" onClick=addNumber(this); ></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="4" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="5" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="6" style="font-size:25px;" onClick=addNumber(this); ></td> 
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="7" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="8" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="9" style="font-size:25px;" onClick=addNumber(this); ></td> 
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="0" style="font-size:25px;" onClick=addNumber(this); ></td>
+                        <td><input type="button" value="*" style="font-size:25px;" onClick=addNumber(this); ></td> 
+                        <td><input type="button" value="#" style="font-size:25px;" onClick=addNumber(this); ></td> 
+                    </tr>
+                </table>
+<a style="background-color:#1a75ff; ;border-radius: 50px" data-role="button" href="#page6">Conectar</a>
+</form>
+
+           </div>    
+                <div data-role="footer" data-theme="b">
+                 
+                </div>
+        </div>
+
+        <div data-role="page" id="page6" data-theme="b">
+        <div data-role="header" style="background-color:#1a75ff;" >
+            <label style="font: 20px Arial;" align="center">Whohit</label>
+        </div>  
+            <div data-role="main" class="tamanhoMinimo">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+  <li><a href="#page7">Conta</a></li>
+  <li><a href="#page8">Ajuda</a></li>
+</ul>
+            </div>
+                <br><br>
+                <h3 align="center" >Status:<br>Aberto</h3><br>
+                <a style="background-color:#1a75ff;border-radius: 50px" data-role="button"  href="">Abrir</a><br>
+                <a style="background-color:#1a75ff;border-radius: 50px" data-role="button"  href="">Fechar</a>
+            </div>
+            <div data-role="footer" data-theme="b">
+                    
+                </div>  
+        </div>
+        
+            <div data-role="page" id="page7" data-theme="b">
+            <div data-role="header" style="background-color:#1a75ff;" >
+                <label style="font: 20px Arial;" align="center">Conta</label>
+            </div>  
+            <div data-role="main" class="tamanhoMinimo">
+            <a href="#page6 " data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+            <br><br><br><br><br>
+                <a style="background-color:#1a75ff;border-radius: 50px" data-role="button" href="">Alterar Dados</a><br>
+                <a style="background-color:#1a75ff;border-radius: 50px" data-role="button" href="">Apagar Conta</a><br>
+                <a style="background-color:#1a75ff;border-radius: 50px" data-role="button" href="">Sair</a>
+            </div>
+                <div data-role="footer" data-theme="b">
+                    
+                </div>  
+        </div>
+
+        <div data-role="page" id="page8" data-theme="b">
+            <div data-role="header" style="background-color:#1a75ff">
+                <label style="font: 20px Arial;" align="center">Ajuda</label>
+            </div>
+            <div data-role="main" class="tamanhoMinimo">
+                <a href="#page6 " data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+                <img src="img/ajuda.png" border="0" style="padding: 100px;width: 150px">
+                
+                <label style="font-size: 18px; font:Arial; text-align:center;">
+                    <p>
+                        Entre em contato em caso de dúvida,<br>
+                        através do telefone ou Email:<br>
+                        Email:<br>
+                        <a href="sac.whohit@emphit.com">sac.whohit@emphit.com</a><br>
+                        Telefone: 0800 666 666
+                    </p>
+                </label>
+            </div>
+            <div data-role="footer" data-theme="b">
+                
+            </div>
+        
+        </div>
+    </body>
+</html>
